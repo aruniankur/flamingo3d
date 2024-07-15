@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flamingo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <iframe src="index.html"></iframe> -->
+    <iframe src="https://nakaaj.github.io/flamingocheck/"></iframe>
+    <button
+      type="button"
+      class="btn btn-primary btn-md-lg position-fixed top-0 end-0 mt-4 mx-md-5 mx-4"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+      id="populateButton"
+    >
+      View Gift Box
+      <!-- this will open the box -->
+    </button>
+    <div>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-4" id="exampleModalLabel">Gift Box</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <table id="myTable" class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Charm</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">Proceed</button>
+              <!-- proceed button -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var dataList = [];
+
+      // Function to populate the table
+      function populateTable(dataList) {
+        let charmlst = ["india", "Heart", "luck"];
+        var tableBody = document.querySelector("#myTable tbody");
+        var total = 0;
+        tableBody.innerHTML = "";
+        dataList.forEach(function (item, index) {
+          var row = tableBody.insertRow();
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          var cell3 = row.insertCell(2);
+          var cell4 = row.insertCell(3);
+          var cell5 = row.insertCell(4);
+
+          cell1.textContent = index + 1;
+          cell2.textContent = item.itemName;
+          cell3.textContent = charmlst[item.charm1];
+          cell4.textContent = item.name;
+          cell5.textContent = item.price;
+
+          total += parseFloat(item.price);
+        });
+        var totalRow = tableBody.insertRow();
+        var totalCell1 = totalRow.insertCell(0);
+        totalCell1.colSpan = 4;
+        var totalCell2 = totalRow.insertCell(1);
+        totalCell2.textContent = "$" + total.toFixed(2);
+      }
+
+      document
+        .getElementById("populateButton")
+        .addEventListener("click", function () {
+          populateTable(dataList);
+        });
+      //here is where the data comes
+      window.onmessage = function (e) {
+        var r = e.data;
+        if (r['itemName']) {
+          console.log(r);
+          dataList.push(r);
+        }
+      };
+    </script>
+  </body>
+</html>

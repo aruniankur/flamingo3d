@@ -1,0 +1,122 @@
+{
+  "123we2": { 
+    "id": "123we2",
+    "name": "Bottle",
+    "price": 45.66,
+    "description": "This is the description of the Bottle",
+    "path":"bottle.gltf",
+    "charm":0,
+    "orient":[],
+    "color": [{"c":"black", "hex":"#141313"},{"c":"blue","hex":"#1D63DC"},{"c":"green", "hex":"#1DDC70"}]
+  },
+  "456we7": {
+    "id": "456we7",
+    "name": "Mug",
+    "price": 89.99,
+    "description": "This is the description of the Cup",
+    "path":"cup.gltf",
+    "charm":0,
+    "orient":[],
+    "color": [{"c":"black", "hex":"#141313"},{"c":"blue","hex":"#1D63DC"},{"c":"green", "hex":"#1DDC70"}]
+  },
+  "789we0": {
+    "id": "789we0",
+    "name": "Wallet",
+    "price": 999.99,
+    "description": "This is the description of the Laptop",
+    "path":"/",
+    "orient":[],
+    "charm":1,
+    "color": [{"c":"black", "hex":"#141313"},{"c":"blue","hex":"#1D63DC"},{"c":"green", "hex":"#1DDC70"}]
+  },
+  "abc123": {
+    "id": "abc123",
+    "name": "passport Cover",
+    "price": 499.99,
+    "description": "This is the description of the sofa",
+    "path":"/",
+    "charm":1,
+    "orient":[],
+    "color": [{"c":"black", "hex":"#141313"},{"c":"blue","hex":"#1D63DC"},{"c":"green", "hex":"#1DDC70"}]
+  },
+  "xyz789": {
+    "id": "xyz789",
+    "name": "Keychain",
+    "price": 799.99,
+    "description": "This is the description of the smartphone",
+    "path":"/",
+    "orient":[],  
+    "charm":0,
+    "color": [{"c":"first", "hex":0},{"c":"second","hex":1},{"c":"third", "hex":2}]
+  },
+  "weq123": {
+    "id": "weq123",
+    "name": "Eyewear",
+    "price": 799.99,
+    "description": "This is the description of the eyewear",
+    "path":"/",
+    "orient":[],  
+    "charm":1,
+    "color": [{"c":"black", "hex":"#141313"},{"c":"blue","hex":"#1D63DC"},{"c":"green", "hex":"#1DDC70"}]
+  },
+  "12qw3e": {
+    "id": "12qw3e",
+    "name": "Purse",
+    "price": 99.99,
+    "description": "This is the description of the purse",
+    "path":"/",
+    "orient":[],  
+    "charm":1,
+    "color": [{"c":"black", "hex":"#141313"},{"c":"blue","hex":"#1D63DC"},{"c":"green", "hex":"#1DDC70"}]
+  },
+  "dkfr43": {
+    "id": "dkfr43",
+    "name": "Pen",
+    "price": 99.99,
+    "description": "This is the description of the pen",
+    "path":"/",
+    "orient":[],  
+    "charm":0,
+    "color": [{"c":"black", "hex":"#141313"},{"c":"blue","hex":"#1D63DC"},{"c":"green", "hex":"#1DDC70"}]
+  },
+  "dkeo34": {
+    "id": "dkeo34",
+    "name": "Chocolate",
+    "price": 99.99,
+    "description": "This is the description of the pen",
+    "path":"/",
+    "orient":[],  
+    "charm":0,
+    "color": [{"c":"black", "hex":"#141313"},{"c":"blue","hex":"#1D63DC"},{"c":"green", "hex":"#1DDC70"}]
+  },
+  "fnjv12": {
+    "id": "fnjv12",
+    "name": "Watch",
+    "price": 199.99,
+    "description": "This is the description of the pen",
+    "path":"/",
+    "orient":[],  
+    "charm":0,
+    "color": [{"c":""}]
+  },
+  "vkfjg4": {
+    "id": "vkfjg4",
+    "name": "Shirt",
+    "price": 90.99,
+    "description": "This is the description of the pen",
+    "path":"/",
+    "orient":[],  
+    "charm":0,
+    "color": [{"c":"black", "hex":"#141313"},{"c":"blue","hex":"#1D63DC"},{"c":"green", "hex":"#1DDC70"}]
+  },
+  "ffjv12": {
+    "id": "ffjv12",
+    "name": "Rose",
+    "price": 199.99,
+    "description": "This is the description of the pen",
+    "path":"/",
+    "orient":[],  
+    "charm":0,
+    "color": [{"c":""}]
+  }
+}

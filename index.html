@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flamingo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      body{
+        background: rgb(255,255,255);
+        background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(249,249,255,1) 50%, rgb(254, 147, 201) 100%);
+        height: 100vh;
+      }
+      .glass {
+        /* From https://css.glass */
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      #c {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: fixed;
+        top: 0; /* Adjust as needed */
+        left: 0; /* Adjust as needed */
+        z-index: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+    <button
+      type="button"
+      class="btn btn-primary btn-md-lg position-fixed top-0 start-0 mt-4 mx-md-5 mx-3 z-1"
+      data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"
+    >
+      --
+    </button>
+    
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Product Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          choose the product you want.
+        </div>
+        <hr />
+        <div class="options">
+          <div id="123we2"><h1>Bottle</h1></div>
+          <hr />
+          <div id="456we7"><h1>Mug</h1></div>
+          <hr />
+          <div id="789we0"><h1>Wallet</h1></div>
+          <hr />
+          <div id="abc123"><h1>Passport Cover</h1></div>
+          <hr />
+          <div id="xyz789"><h1>Keychain</h1></div>
+          <hr />
+          <div id="weq123"><h1>Eyewear</h1></div>
+          <hr />
+          <div id="12qw3e"><h1>Purse</h1></div>
+          <hr />
+          <div id="dkfr43"><h1>Pen</h1></div>
+          <hr />
+          <div id="dkeo34"><h1>Chocolate</h1></div>
+          <hr />
+          <div id="fnjv12"><h1>Watch</h1></div>
+          <hr />
+          <div id="ffjv12"><h1>Rose</h1></div>
+          <hr />
+          <div id="vkfjg4"><h1>shirt</h1></div>
+        </div>
+      </div>
+    </div>
+
+    <canvas id="c" data-engine="three.js r161" class="z-0"></canvas>
+    <script type="module" src="/main.js"></script>
+
+    <button
+      type="button"
+      class="btn btn-primary btn-md-lg position-fixed top-0 end-0 mt-4 mx-md-5 mx-4"
+      data-bs-toggle="modal" data-bs-target="#exampleModal"
+      id="populateButton"
+    >
+      View Gift Box
+      <!-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-secondary" id="num_element">0</span> -->
+    </button>
+    <div>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-4" id="exampleModalLabel">Gift Box</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table id="myTable" class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Charm</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Proceed</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="container-fluid text-center">
+      <div class="row align-items-start">
+        <div class="col-11 col-md-4 glass mt-2 mt-md-4 mx-3 mx-md-5">
+          <h1 id="productName">product Name</h1>
+          <p id="Description">Description</p>
+          <h4 id="price">Price</h4>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid text-center position-absolute bottom-0 end-0 mb-2">
+      <div class="row align-items-start">
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-11 col-md-3 glass mb-2 mb-md-4 mx-3 mx-md-5">
+          <div>
+            <div>
+              <label for="exampleFormControlInput1" class="form-label"><h3>Name</h3></label>
+              <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="enter name">
+              <button type="button" class="btn btn-success m-2" id="submitButton">Add</button>
+            </div>
+            <div style="display: none;" id="invisible">
+              <button class="btn btn-secondary dropdown-toggle m-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Charm type
+              </button>
+              <ul class="dropdown-menu" id="dropdownMenu2">
+                <li><a class="dropdown-item" id="0">India</a></li>
+                <li><a class="dropdown-item" id="1">Heart</a></li>
+                <li><a class="dropdown-item" id="2">Luck</a></li>
+              </ul>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Type
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdownMenu">
+              </ul>
+              <button type="button" class="btn btn-success m-2" id="addtocart" onclick="alert('Item added to gift box!')">Add To Gift Box</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="populate.js"></script>
+  </body>
+</html>
